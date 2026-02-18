@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/gensler", "dest": "/gensler.html" },
+    { "src": "/turner", "dest": "/turner.html" },
+    { "src": "/perkins-will", "dest": "/perkins-will.html" },
+    { "src": "/gensler.html", "dest": "/gensler.html" },
+    { "src": "/turner.html", "dest": "/turner.html" },
+    { "src": "/perkins-will.html", "dest": "/perkins-will.html" }
+  ]
+}
