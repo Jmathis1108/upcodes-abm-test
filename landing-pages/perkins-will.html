@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UpCodes for Perkins+Will</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --white:      #FFFFFF;
+    --bg-alt:     #F4F6FA;
+    --navy:       #1B2B4B;
+    --heading:    #1A1F36;
+    --body:       #4A5568;
+    --muted:      #8492A6;
+    --border:     #E2E8F0;
+    --blue:       #3B5BDB;
+    --blue-h:     #2F4AC4;
+    --blue-light: #EEF2FF;
+    --blue-mid:   #C7D2FE;
+    --sidebar:    #1E2A3B;
+    --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max:        1100px;
+    --r:          6px;
+    --r-lg:       10px;
+    --r-xl:       16px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--white); color: var(--heading); -webkit-font-smoothing: antialiased; }
+
+  /* ─── NAV ─── */
+  nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 36px; z-index: 50; }
+  .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .logo-wordmark { font-size: 1.05rem; font-weight: 700; color: var(--blue); letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 0.875rem; color: var(--body); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--heading); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .btn-ghost-nav { background: none; border: 1px solid var(--border); color: var(--body); padding: 7px 16px; border-radius: var(--r); font-size: 0.85rem; font-weight: 500; cursor: pointer; font-family: var(--font); transition: border-color 0.2s, color 0.2s; }
+  .btn-ghost-nav:hover { border-color: var(--blue); color: var(--blue); }
+  .btn-blue-nav { background: var(--blue); color: white; border: none; padding: 8px 18px; border-radius: var(--r); font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: background 0.2s; }
+  .btn-blue-nav:hover { background: var(--blue-h); }
+
+  /* ─── HERO ─── */
+  .hero { background: var(--white); padding: 80px 48px 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 900px; height: 480px; background: radial-gradient(ellipse at 50% 30%, #E8F0F8 0%, rgba(232,240,248,0) 65%); pointer-events: none; z-index: 0; }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-kicker { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-light); color: var(--blue); font-size: 0.72rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; border: 1px solid var(--blue-mid); }
+  .hero h1 { font-size: 2.8rem; font-weight: 800; color: var(--heading); letter-spacing: -0.04em; line-height: 1.15; margin-bottom: 16px; max-width: 800px; margin-left: auto; margin-right: auto; }
+  .hero h1 .hl { color: var(--blue); }
+  .hero-sub { font-size: 1.05rem; color: var(--body); max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; margin-bottom: 56px; }
+  .btn-blue { background: var(--blue); color: white; border: none; padding: 12px 28px; border-radius: var(--r-lg); font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: background 0.2s, transform 0.15s; }
+  .btn-blue:hover { background: var(--blue-h); transform: translateY(-1px); }
+  .btn-outline { background: white; color: var(--heading); border: 1px solid var(--border); padding: 12px 28px; border-radius: var(--r-lg); font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: #BCC8E0; }
+
+  /* Stat row */
+  .stat-row { max-width: 600px; margin: 0 auto 72px; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .stat-col { text-align: center; padding: 0 24px; position: relative; }
+  .stat-col + .stat-col::before { content: ''; position: absolute; left: 0; top: 10%; height: 80%; width: 1px; background: var(--border); }
+  .stat-big { font-size: 2.2rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; display: block; line-height: 1; }
+  .stat-lbl { font-size: 0.78rem; color: var(--muted); margin-top: 6px; display: block; }
+
+  /* ─── MOCKUP SECTION ─── */
+  .mockup-section { max-width: var(--max); margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
+  .browser-wrap { background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 24px 64px rgba(30,50,100,0.11), 0 4px 16px rgba(30,50,100,0.07); overflow: hidden; }
+  .browser-bar { background: #F8F9FB; border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+  .browser-dots { display: flex; gap: 5px; }
+  .bdot { width: 10px; height: 10px; border-radius: 50%; }
+  .bdot-r { background: #FF5F57; }
+  .bdot-y { background: #FFBD2E; }
+  .bdot-g { background: #28C840; }
+  .browser-url { flex: 1; background: white; border: 1px solid var(--border); border-radius: 4px; padding: 4px 12px; font-size: 0.72rem; color: var(--muted); margin-left: 8px; }
+
+  /* App shell */
+  .app-shell { display: flex; height: 420px; }
+
+  /* Icon sidebar - dark navy */
+  .app-sidebar { width: 56px; background: var(--sidebar); display: flex; flex-direction: column; align-items: center; padding: 14px 0; gap: 2px; flex-shrink: 0; }
+  .sidebar-logo-mark { margin-bottom: 14px; }
+  .nav-icon { width: 38px; height: 38px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; }
+  .nav-icon svg { width: 18px; height: 18px; stroke: rgba(255,255,255,0.38); stroke-width: 1.5; fill: none; }
+  .nav-icon.active { background: rgba(59,91,219,0.25); }
+  .nav-icon.active svg { stroke: #7B9EF0; }
+  .nav-icon-lbl { font-size: 0.42rem; color: rgba(255,255,255,0.3); font-weight: 500; }
+  .nav-icon.active .nav-icon-lbl { color: #7B9EF0; }
+
+  /* Second sidebar */
+  .sidebar-2 { width: 160px; background: white; border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+  .s2-header { padding: 12px 12px 8px; border-bottom: 1px solid var(--border); }
+  .s2-title { font-size: 0.72rem; font-weight: 700; color: var(--heading); margin-bottom: 7px; }
+  .s2-search { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px; padding: 5px 8px; font-size: 0.68rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+  .s2-search svg { width: 10px; height: 10px; stroke: var(--muted); stroke-width: 2; fill: none; flex-shrink: 0; }
+  .s2-list { padding: 4px 0; overflow: hidden; }
+  .s2-item { padding: 6px 12px; font-size: 0.7rem; color: var(--body); display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+  .s2-item:hover { background: var(--bg-alt); }
+  .s2-item.active { background: var(--blue-light); color: var(--blue); font-weight: 600; border-left: 2px solid var(--blue); padding-left: 10px; }
+  .s2-count { font-size: 0.6rem; color: var(--muted); background: var(--bg-alt); padding: 1px 5px; border-radius: 8px; }
+  .s2-item.active .s2-count { background: var(--blue-mid); color: var(--blue); }
+
+  /* Main content */
+  .app-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .app-topbar { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  .app-searchbar { flex: 1; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; display: flex; align-items: center; gap: 8px; }
+  .app-searchbar svg { width: 13px; height: 13px; stroke: var(--blue); stroke-width: 2; fill: none; flex-shrink: 0; }
+  .search-val { font-size: 0.73rem; color: var(--heading); }
+  .search-cursor { display: inline-block; width: 1px; height: 12px; background: var(--blue); margin-left: 1px; vertical-align: middle; animation: blink 1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .filter-pill { background: white; border: 1px solid var(--border); border-radius: 4px; padding: 5px 10px; font-size: 0.69rem; color: var(--body); font-weight: 500; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+  .filter-pill svg { width: 10px; height: 10px; stroke: var(--muted); stroke-width: 2; fill: none; }
+  .app-content { display: flex; flex: 1; overflow: hidden; }
+  .app-content-main { flex: 1; padding: 14px; overflow: hidden; }
+  .app-content-aside { width: 210px; border-left: 1px solid var(--border); padding: 12px; flex-shrink: 0; overflow: hidden; }
+  .content-heading { font-size: 1rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; }
+  .code-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .code-card { border: 1px solid var(--border); border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: border-color 0.15s; }
+  .code-card:hover { border-color: var(--blue-mid); }
+  .code-card.highlighted { border-color: var(--blue-mid); background: var(--blue-light); }
+  .code-icon { width: 30px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+  .code-name { font-size: 0.71rem; font-weight: 600; color: var(--heading); line-height: 1.3; }
+  .code-sub { font-size: 0.6rem; color: var(--muted); margin-top: 1px; }
+  .code-card.highlighted .code-name { color: var(--blue); }
+  .code-card.highlighted .code-sub { color: var(--blue); opacity: 0.7; }
+
+  /* Updates panel */
+  .updates-head { font-size: 0.68rem; font-weight: 700; color: var(--heading); margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+  .update-item { padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .update-item:last-child { border-bottom: none; }
+  .update-badge { display: inline-block; font-size: 0.57rem; font-weight: 700; padding: 2px 5px; border-radius: 3px; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .badge-amend { background: #FEF3C7; color: #92400E; }
+  .badge-errata { background: #FEE2E2; color: #991B1B; }
+  .badge-update { background: #D1FAE5; color: #065F46; }
+  .update-text { font-size: 0.63rem; color: var(--body); line-height: 1.45; }
+  .update-hl { color: var(--blue); font-weight: 500; }
+  .update-hl-red { color: #EF4444; font-weight: 500; }
+
+  /* ─── CUSTOMERS ─── */
+  .customers { background: var(--white); padding: 32px 48px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-top: 64px; }
+  .customers-label { text-align: center; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+  .customers-logos { max-width: var(--max); margin: 0 auto; display: flex; gap: 32px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .cust-logo { font-size: 0.8rem; font-weight: 700; color: #B0BAC9; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ─── SHARED SECTION STYLES ─── */
+  .section-pill { display: inline-block; border: 1px solid var(--border); color: var(--body); font-size: 0.72rem; font-weight: 500; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; }
+  .section-wrap { max-width: var(--max); margin: 0 auto; }
+
+  /* ─── CHALLENGES ─── */
+  .challenges { padding: 72px 48px; background: var(--bg-alt); }
+  .challenges-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+  .challenges-head h2 { font-size: 2rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 12px; }
+  .challenges-head p { font-size: 0.95rem; color: var(--body); line-height: 1.7; }
+  .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .challenge-card { background: white; border: 1px solid var(--border); border-radius: var(--r-xl); padding: 28px; }
+  .ch-icon { width: 40px; height: 40px; background: var(--blue-light); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 16px; }
+  .challenge-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--heading); margin-bottom: 10px; line-height: 1.35; }
+  .challenge-card p { font-size: 0.865rem; color: var(--body); line-height: 1.65; }
+
+  /* ─── COPILOT SECTION ─── */
+  .copilot-section { padding: 72px 48px; background: white; }
+  .copilot-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .copilot-head h2 { font-size: 2rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 12px; }
+  .copilot-head p { font-size: 0.95rem; color: var(--body); line-height: 1.7; }
+  .copilot-browser { max-width: var(--max); margin: 0 auto; background: white; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 20px 56px rgba(30,50,100,0.10), 0 4px 12px rgba(30,50,100,0.06); overflow: hidden; }
+  .copilot-shell { display: flex; height: 480px; }
+
+  /* Copilot config panel */
+  .copilot-panel { width: 180px; background: white; border-right: 1px solid var(--border); padding: 16px 14px; flex-shrink: 0; }
+  .cp-title { font-size: 0.82rem; font-weight: 700; color: var(--heading); display: flex; align-items: center; gap: 6px; margin-bottom: 14px; }
+  .beta-tag { font-size: 0.55rem; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--blue-mid); }
+  .cp-label { font-size: 0.61rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 10px 0 5px; }
+  .cp-checkbox { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+  .cp-checkbox input { width: 12px; height: 12px; accent-color: var(--blue); }
+  .cp-checkbox label { font-size: 0.69rem; color: var(--body); }
+  .cp-select { width: 100%; border: 1px solid var(--border); border-radius: 4px; padding: 5px 7px; font-size: 0.67rem; color: var(--body); background: white; font-family: var(--font); margin-bottom: 4px; appearance: none; }
+  .cp-active-tag { background: var(--blue); color: white; font-size: 0.64rem; font-weight: 500; padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 5px; }
+  .cp-active-tag .x { opacity: 0.65; font-size: 0.7rem; cursor: pointer; }
+
+  /* Chat area */
+  .copilot-chat { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .copilot-actions { display: flex; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .action-chip { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 100px; padding: 5px 12px; font-size: 0.72rem; color: var(--body); font-weight: 500; cursor: pointer; background: white; transition: border-color 0.15s, color 0.15s; }
+  .action-chip:hover { border-color: var(--blue-mid); color: var(--blue); }
+  .action-chip svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2; fill: none; }
+  .chat-area { flex: 1; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; overflow: hidden; }
+  .msg-user { align-self: flex-end; max-width: 80%; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px 10px 2px 10px; padding: 10px 14px; font-size: 0.78rem; color: var(--heading); line-height: 1.55; }
+  .msg-ai { display: flex; gap: 10px; align-items: flex-start; }
+  .ai-avatar { width: 26px; height: 26px; background: var(--blue); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .ai-avatar svg { width: 13px; height: 13px; }
+  .ai-body { flex: 1; }
+  .ai-text { font-size: 0.76rem; color: var(--body); line-height: 1.65; margin-bottom: 10px; }
+  .ai-text strong { color: var(--heading); font-weight: 600; }
+  .citations { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .cite-pill { background: var(--blue-light); border: 1px solid var(--blue-mid); color: var(--blue); font-size: 0.63rem; font-weight: 600; padding: 3px 9px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; }
+  .cite-num { background: var(--blue); color: white; border-radius: 50%; width: 14px; height: 14px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.5rem; font-weight: 700; }
+  .code-preview { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 9px 11px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .cp-preview-inner { flex: 1; }
+  .cp-preview-label { font-size: 0.65rem; font-weight: 700; color: var(--blue); margin-bottom: 3px; }
+  .cp-preview-text { font-size: 0.62rem; color: var(--muted); line-height: 1.45; }
+  .cp-preview-icons { display: flex; gap: 5px; }
+  .cp-preview-icons svg { width: 12px; height: 12px; stroke: var(--muted); stroke-width: 1.5; fill: none; opacity: 0.5; cursor: pointer; }
+  .chat-input-row { border-top: 1px solid var(--border); padding: 10px 14px; display: flex; align-items: center; gap: 8px; }
+  .chat-input-box { flex: 1; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 0.74rem; color: var(--muted); font-family: var(--font); }
+  .chat-send-btn { background: var(--blue); border: none; border-radius: 6px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+  .chat-send-btn svg { width: 13px; height: 13px; stroke: white; stroke-width: 2; fill: none; }
+
+  /* ─── CAPABILITIES ─── */
+  .capabilities { padding: 72px 48px; background: var(--bg-alt); }
+  .capabilities-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+  .capabilities-head h2 { font-size: 2rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 12px; }
+  .capabilities-head p { font-size: 0.95rem; color: var(--body); line-height: 1.7; }
+  .grid-3x2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .cap-card { background: white; border: 1px solid var(--border); border-radius: var(--r-xl); padding: 24px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .cap-card:hover { border-color: var(--blue-mid); box-shadow: 0 4px 16px rgba(59,91,219,0.08); }
+  .cap-icon { width: 38px; height: 38px; background: var(--blue-light); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; font-size: 1rem; margin-bottom: 14px; }
+  .cap-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--heading); margin-bottom: 8px; }
+  .cap-card p { font-size: 0.84rem; color: var(--body); line-height: 1.6; }
+
+  /* ─── PROOF ─── */
+  .proof-section { padding: 72px 48px; background: white; }
+  .proof-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .proof-col-head { margin-bottom: 28px; }
+  .proof-col-head h2 { font-size: 1.7rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; line-height: 1.2; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .stat-block { }
+  .s-num { font-size: 2.4rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; display: block; line-height: 1; }
+  .s-lbl { font-size: 0.76rem; color: var(--muted); margin-top: 5px; display: block; }
+  .benchmark { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 20px 24px; display: flex; align-items: center; gap: 20px; margin-bottom: 14px; }
+  .bench-score { font-size: 2rem; font-weight: 800; color: var(--blue); letter-spacing: -0.03em; flex-shrink: 0; min-width: 60px; }
+  .bench-text { font-size: 0.83rem; color: var(--body); line-height: 1.55; }
+  .bench-text strong { color: var(--heading); font-weight: 600; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { padding: 72px 48px; background: var(--bg-alt); }
+  .t-head { text-align: center; margin-bottom: 40px; }
+  .t-head h2 { font-size: 1.8rem; font-weight: 800; color: var(--heading); letter-spacing: -0.03em; }
+  .t-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .t-card { background: white; border: 1px solid var(--border); border-radius: var(--r-xl); padding: 24px; }
+  .t-heart { width: 28px; height: 28px; background: #FEE2E2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-bottom: 14px; }
+  .t-quote { font-size: 0.875rem; color: var(--body); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+  .t-name { font-size: 0.78rem; font-weight: 700; color: var(--heading); }
+  .t-role { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+  /* ─── CTA ─── */
+  .cta-section { padding: 72px 48px; background: var(--blue); position: relative; overflow: hidden; text-align: center; }
+  .cta-section::before { content: ''; position: absolute; top: -100px; right: -80px; width: 360px; height: 360px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+  .cta-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+  .cta-inner h2 { font-size: 2rem; font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 14px; }
+  .cta-inner p { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 32px; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; }
+  .btn-white { background: white; color: var(--blue); border: none; padding: 13px 30px; border-radius: var(--r-lg); font-size: 0.95rem; font-weight: 700; cursor: pointer; font-family: var(--font); transition: transform 0.15s; }
+  .btn-white:hover { transform: translateY(-1px); }
+  .btn-outline-white { background: none; border: 2px solid rgba(255,255,255,0.45); color: white; padding: 13px 30px; border-radius: var(--r-lg); font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: border-color 0.2s; }
+  .btn-outline-white:hover { border-color: white; }
+  .cta-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 16px; }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--navy); padding: 40px 48px 32px; }
+  .footer-top { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+  .logo-white .logo-wordmark { color: white; }
+  .footer-links-row { display: flex; gap: 24px; }
+  .footer-links-row a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links-row a:hover { color: rgba(255,255,255,0.85); }
+  .footer-bottom { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+  .footer-legal { display: flex; gap: 20px; }
+  .footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; top: 36px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2rem; }
+    .hero, .mockup-section, .customers, .challenges, .copilot-section, .capabilities, .proof-section, .testimonials, .cta-section, footer { padding-left: 20px; padding-right: 20px; }
+    .grid-2x2, .grid-3x2, .t-grid { grid-template-columns: 1fr; }
+    .proof-inner { grid-template-columns: 1fr; gap: 40px; }
+    .stat-row { grid-template-columns: 1fr 1fr; gap: 24px 0; margin-bottom: 48px; }
+    .app-shell, .copilot-shell { height: 320px; }
+    .sidebar-2 { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── ATTRIBUTION BAR ─── -->
+<div style="background:#1A1F36;color:rgba(255,255,255,0.55);text-align:center;font-size:0.75rem;font-family:'Inter',sans-serif;padding:8px 20px;letter-spacing:0.02em;">
+  ABM prototypes designed by <strong style="color:rgba(255,255,255,0.85);font-weight:600;">Justin Mathis</strong>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-wordmark">UpCodes</span>
+  </a>
+  <div class="nav-links">
+    <a href="#">Libraries</a>
+    <a href="#">Features</a>
+    <a href="#">Solutions</a>
+    <a href="#">Pricing</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-ghost-nav">Login</button>
+    <button class="btn-ghost-nav">Get a Demo</button>
+    <button class="btn-blue-nav">Try for Free</button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-kicker">&#9679;&nbsp; For Perkins+Will &middot; Healthcare Architecture</div>
+  <h1>FGI, NFPA, and California Title 24 should not require <span class="hl">three separate workflows</span></h1>
+  <p class="hero-sub">Perkins+Will designs at the intersection of FGI Guidelines, NFPA, IBC, and state amendments that each update on independent cycles. A missed FGI requirement delays Health Department approval - not just plan review. That distinction carries real cost.</p>
+
+  <div class="hero-btns">
+    <button class="btn-blue">Book a Demo for Perkins+Will</button>
+    <button class="btn-outline">See Copilot Live</button>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-col">
+      <span class="stat-big">800,000</span>
+      <span class="stat-lbl">Monthly Active Users</span>
+    </div>
+    <div class="stat-col">
+      <span class="stat-big">6,400+</span>
+      <span class="stat-lbl">Organizations</span>
+    </div>
+    <div class="stat-col">
+      <span class="stat-big">94%</span>
+      <span class="stat-lbl">Top 100 design firms in the US</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCT MOCKUP 1 - Multi-code library view for healthcare project ─── -->
+<div class="mockup-section">
+  <div class="browser-wrap">
+    <div class="browser-bar">
+      <div class="browser-dots">
+        <div class="bdot bdot-r"></div>
+        <div class="bdot bdot-y"></div>
+        <div class="bdot bdot-g"></div>
+      </div>
+      <div class="browser-url">up.codes/projects/perkins-will-sf-medical-center</div>
+    </div>
+    <div class="app-shell">
+
+      <!-- Icon sidebar -->
+      <div class="app-sidebar">
+        <div class="sidebar-logo-mark">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+            <line x1="13.5" y1="13.5" x2="16.5" y2="16.5" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><path d="M3 10L10 3l7 7M5 8.5V17h4v-4h2v4h4V8.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nav-icon-lbl">Home</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="6" height="7" rx="1"/><rect x="11" y="3" width="6" height="4" rx="1"/><rect x="11" y="10" width="6" height="7" rx="1"/><rect x="3" y="13" width="6" height="4" rx="1"/></svg><span class="nav-icon-lbl">Libraries</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6"/><circle cx="10" cy="10" r="2.5" style="fill:rgba(255,255,255,0.15)"/></svg><span class="nav-icon-lbl">Copilot</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5"/><line x1="13" y1="13" x2="17" y2="17" stroke-linecap="round"/></svg><span class="nav-icon-lbl">Search</span></div>
+        <div class="nav-icon active"><svg viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="12" rx="1.5"/><path d="M7 5V4a1 1 0 011-1h4a1 1 0 011 1v1"/><line x1="6" y1="10" x2="14" y2="10"/><line x1="6" y1="13" x2="11" y2="13"/></svg><span class="nav-icon-lbl">Projects</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><path d="M5 3h10a1 1 0 011 1v13l-6-3-6 3V4a1 1 0 011-1z"/></svg><span class="nav-icon-lbl">Bookmarks</span></div>
+      </div>
+
+      <!-- Project sidebar - shows project-level code stack for the medical center -->
+      <div class="sidebar-2">
+        <div class="s2-header">
+          <div class="s2-title">SF Medical Center</div>
+          <div class="s2-search">
+            <svg viewBox="0 0 12 12"><circle cx="5" cy="5" r="3.5"/><line x1="7.5" y1="7.5" x2="11" y2="11" stroke-linecap="round"/></svg>
+            Search codes
+          </div>
+        </div>
+        <div class="s2-list">
+          <div class="s2-item active">FGI Guidelines <span class="s2-count">2022</span></div>
+          <div class="s2-item">IBC &middot; OSHPD <span class="s2-count">2022</span></div>
+          <div class="s2-item">NFPA 101 <span class="s2-count">2021</span></div>
+          <div class="s2-item">NFPA 72 <span class="s2-count">2022</span></div>
+          <div class="s2-item">CA Title 24 <span class="s2-count">Part 2</span></div>
+          <div class="s2-item" style="color:var(--muted);">ASHRAE 170</div>
+          <div class="s2-item" style="color:var(--muted);">ADA / CA 11B</div>
+          <div class="s2-item" style="color:var(--muted);">NFPA 99</div>
+        </div>
+      </div>
+
+      <!-- Main content - healthcare code grid -->
+      <div class="app-main">
+        <div class="app-topbar">
+          <div class="app-searchbar">
+            <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14" stroke-linecap="round"/></svg>
+            <span class="search-val">ICU room minimum area FGI California OSHPD</span><span class="search-cursor"></span>
+          </div>
+          <div class="filter-pill">
+            <svg viewBox="0 0 12 12"><line x1="1" y1="3" x2="11" y2="3"/><line x1="3" y1="6.5" x2="9" y2="6.5"/><line x1="5" y1="10" x2="7" y2="10"/></svg>
+            Facility: Acute Care Hospital
+          </div>
+        </div>
+        <div class="app-content">
+          <div class="app-content-main">
+            <div class="content-heading">Healthcare Code Stack</div>
+            <div class="code-grid">
+              <div class="code-card highlighted">
+                <div class="code-icon" style="background:#3B5BDB;color:white;">🏥</div>
+                <div><div class="code-name">FGI Guidelines 2022</div><div class="code-sub">CA adopted &middot; OSHPD enforced</div></div>
+              </div>
+              <div class="code-card">
+                <div class="code-icon" style="background:#FEF3C7;">🔥</div>
+                <div><div class="code-name">NFPA 101 Life Safety</div><div class="code-sub">2021 edition &middot; Current</div></div>
+              </div>
+              <div class="code-card">
+                <div class="code-icon" style="background:#EEF2FF;">🏛️</div>
+                <div><div class="code-name">IBC &middot; OSHPD I</div><div class="code-sub">2022 CBC &middot; OSHPD amendments</div></div>
+              </div>
+              <div class="code-card">
+                <div class="code-icon" style="background:#D1FAE5;">💨</div>
+                <div><div class="code-name">ASHRAE 170</div><div class="code-sub">Ventilation of Health Care Facilities</div></div>
+              </div>
+              <div class="code-card">
+                <div class="code-icon" style="background:#FEE2E2;">⚡</div>
+                <div><div class="code-name">NFPA 99</div><div class="code-sub">Health Care Facilities Code 2021</div></div>
+              </div>
+              <div class="code-card">
+                <div class="code-icon" style="background:#F3F4F6;">♿</div>
+                <div><div class="code-name">CA Title 24 &middot; 11B</div><div class="code-sub">Accessibility &middot; Diverges from ADA</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Updates panel - healthcare-specific amendments -->
+          <div class="app-content-aside">
+            <div class="updates-head">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <circle cx="5.5" cy="5.5" r="5" fill="#FEF3C7" stroke="#D97706" stroke-width="0.5"/>
+                <text x="5.5" y="8" text-anchor="middle" font-size="6.5" fill="#92400E" font-weight="800" font-family="Inter,sans-serif">!</text>
+              </svg>
+              All Code Updates
+            </div>
+            <div class="update-item">
+              <div class="update-badge badge-amend">Amendment</div>
+              <div class="update-text"><span class="update-hl">FGI 2022 § 2.2-2.1.1</span> - CA OSHPD requires 4-ft clear zone on three sides of ICU bed, exceeding base FGI.</div>
+            </div>
+            <div class="update-item">
+              <div class="update-badge badge-update">Update</div>
+              <div class="update-text"><span class="update-hl">NFPA 101 § 18.3.2</span> Sprinkler requirements for I-2 occupancy updated - OSHPD clarification Jan 2024</div>
+            </div>
+            <div class="update-item">
+              <div class="update-badge badge-errata">Errata</div>
+              <div class="update-text"><span class="update-hl-red">ASHRAE 170 Table 7.1</span> ICU air changes per hour - errata correction to minimum ACH value</div>
+            </div>
+            <div class="update-item">
+              <div class="update-badge badge-amend">Amendment</div>
+              <div class="update-text"><span class="update-hl">CA Title 24 11B-805</span> Medical care facilities accessible route - CA diverges from federal ADA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CUSTOMERS ─── -->
+<div class="customers">
+  <div class="customers-label">Industry leaders use UpCodes</div>
+  <div class="customers-logos">
+    <div class="cust-logo">NBCUniversal</div>
+    <div class="cust-logo">UCLA</div>
+    <div class="cust-logo">DR Horton</div>
+    <div class="cust-logo">Lennar</div>
+    <div class="cust-logo">CBRE</div>
+    <div class="cust-logo">Woods Bagot</div>
+    <div class="cust-logo">Snøhetta</div>
+    <div class="cust-logo">Cruise</div>
+  </div>
+</div>
+
+<!-- ─── CHALLENGES ─── -->
+<section class="challenges">
+  <div class="section-wrap">
+    <div class="challenges-head">
+      <div class="section-pill">The Perkins+Will Challenge</div>
+      <h2>Healthcare design sits at the intersection of codes that change on independent cycles and disagree with each other</h2>
+      <p>FGI updates every four years. States adopt it on their own timelines. NFPA 101 and ASHRAE 170 operate independently. A design decision compliant with one standard can be non-compliant with a state amendment to another.</p>
+    </div>
+    <div class="grid-2x2">
+      <div class="challenge-card">
+        <div class="ch-icon">📋</div>
+        <h3>FGI updates every four years with inconsistent state adoption timelines</h3>
+        <p>California OSHPD enforces FGI 2022. Other states are still on FGI 2018. A firm working across multiple states needs to know exactly which edition governs each project - and which state amendments layer on top of that edition. There is no central source that tracks this for you.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="ch-icon">⚗️</div>
+        <h3>Life science projects require cross-referencing codes that don't reference each other</h3>
+        <p>A BSL-2 research lab requires coordination across IBC occupancy classification, NFPA 45, ASHRAE 170, and the NIH Design Requirements Manual. None of these codes explicitly reference the others. The burden of cross-referencing falls entirely on the project team.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="ch-icon">♿</div>
+        <h3>California Title 24 accessibility diverges from federal ADA in healthcare settings</h3>
+        <p>CA Title 24 Part 2 Chapter 11B imposes stricter accessible route requirements in medical care occupancies than the base ADA Standards. An architect reading only the federal standard is designing to a lower threshold than OSHPD will enforce at permit review.</p>
+      </div>
+      <div class="challenge-card">
+        <div class="ch-icon">🚨</div>
+        <h3>A missed FGI requirement delays Health Department approval, not just plan review</h3>
+        <p>Healthcare projects go through a two-track review process - building department and Health Department. A code deficiency caught by the Health Department restarts the OSHPD review clock, not just the building permit. That delay can cost months on a project timeline where every week has a real operational cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COPILOT SECTION ─── -->
+<section class="copilot-section">
+  <div class="copilot-head">
+    <div class="section-pill">UpCodes Copilot</div>
+    <h2>One question. Every applicable code - FGI, NFPA, IBC, and the state amendment that overrides them all</h2>
+    <p>Copilot surfaces requirements across your full code stack simultaneously. Ask about ICU room area and get the FGI baseline, the OSHPD amendment that supersedes it, and the NFPA occupancy requirement that also applies - in a single cited response.</p>
+  </div>
+
+  <!-- Copilot UI mockup - FGI/OSHPD ICU room question, matching screenshot layout -->
+  <div class="copilot-browser">
+    <div class="browser-bar">
+      <div class="browser-dots">
+        <div class="bdot bdot-r"></div>
+        <div class="bdot bdot-y"></div>
+        <div class="bdot bdot-g"></div>
+      </div>
+      <div class="browser-url">up.codes/copilot</div>
+    </div>
+    <div class="copilot-shell">
+
+      <!-- Icon sidebar -->
+      <div class="app-sidebar">
+        <div class="sidebar-logo-mark">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+            <line x1="13.5" y1="13.5" x2="16.5" y2="16.5" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><path d="M3 10L10 3l7 7M5 8.5V17h4v-4h2v4h4V8.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="nav-icon-lbl">Home</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="6" height="7" rx="1"/><rect x="11" y="3" width="6" height="4" rx="1"/><rect x="11" y="10" width="6" height="7" rx="1"/><rect x="3" y="13" width="6" height="4" rx="1"/></svg><span class="nav-icon-lbl">Libraries</span></div>
+        <div class="nav-icon active"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6"/><circle cx="10" cy="10" r="2.5" style="fill:rgba(124,159,240,0.4)"/></svg><span class="nav-icon-lbl">Copilot</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5"/><line x1="13" y1="13" x2="17" y2="17" stroke-linecap="round"/></svg><span class="nav-icon-lbl">Search</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="12" rx="1.5"/><path d="M7 5V4a1 1 0 011-1h4a1 1 0 011 1v1"/></svg><span class="nav-icon-lbl">Projects</span></div>
+        <div class="nav-icon"><svg viewBox="0 0 20 20"><path d="M5 3h10a1 1 0 011 1v13l-6-3-6 3V4a1 1 0 011-1z"/></svg><span class="nav-icon-lbl">Bookmarks</span></div>
+      </div>
+
+      <!-- Config panel - healthcare project context -->
+      <div class="copilot-panel">
+        <div class="cp-title">Copilot <span class="beta-tag">Beta</span></div>
+        <div class="cp-label">Sources</div>
+        <div class="cp-checkbox"><input type="checkbox" checked readonly><label>Codes and diagrams</label></div>
+        <div class="cp-checkbox"><input type="checkbox" checked readonly><label>Assemblies</label></div>
+        <div class="cp-label">Jurisdiction</div>
+        <select class="cp-select"><option>California &middot; OSHPD</option></select>
+        <div class="cp-label">Code year</div>
+        <div class="cp-active-tag">Current (2022) <span class="x">&#10005;</span></div>
+        <div class="cp-label">Facility type</div>
+        <select class="cp-select"><option>Acute Care Hospital &middot; I-2</option></select>
+        <div class="cp-label">Active codebooks</div>
+        <div style="font-size:0.62rem;color:var(--muted);line-height:1.6;">FGI 2022<br>CBC 2022 &middot; OSHPD<br>NFPA 101 (2021)<br>ASHRAE 170<br>CA Title 24</div>
+      </div>
+
+      <!-- Chat area -->
+      <div class="copilot-chat">
+        <!-- Action chips -->
+        <div class="copilot-actions">
+          <div class="action-chip">
+            <svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5.5"/><line x1="7" y1="4" x2="7" y2="7"/><line x1="7" y1="9" x2="7" y2="9.5" stroke-linecap="round"/></svg>
+            Ask a code question
+          </div>
+          <div class="action-chip">
+            <svg viewBox="0 0 14 14"><rect x="2" y="3" width="10" height="8" rx="1.5"/><line x1="4" y1="6" x2="10" y2="6"/><line x1="4" y1="8.5" x2="8" y2="8.5"/></svg>
+            Explain this
+          </div>
+          <div class="action-chip">
+            <svg viewBox="0 0 14 14"><line x1="2" y1="4" x2="12" y2="4"/><line x1="2" y1="7" x2="12" y2="7"/><line x1="2" y1="10" x2="8" y2="10"/></svg>
+            Find related sections
+          </div>
+          <div class="action-chip">
+            <svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1"/><line x1="5" y1="7" x2="9" y2="7"/><line x1="7" y1="5" x2="7" y2="9"/></svg>
+            Perform calculation
+          </div>
+        </div>
+
+        <div class="chat-area">
+          <div class="msg-user">
+            For a critical care ICU in a California acute care hospital, what is the minimum patient room area required by FGI, and does OSHPD amend this?
+          </div>
+          <div class="msg-ai">
+            <div class="ai-avatar">
+              <svg viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="6" fill="white"/>
+                <circle cx="7" cy="7" r="2.5" fill="#3B5BDB"/>
+              </svg>
+            </div>
+            <div class="ai-body">
+              <div class="ai-text">
+                Under <strong>FGI 2022 Section 2.2-2.1.1.1</strong>, the minimum patient room area for a critical care ICU is <strong>200 square feet</strong> of clear floor area per bed. However, <strong>California OSHPD amends this requirement</strong> under CBC 2022 Section 1276.4: OSHPD requires a minimum of <strong>250 square feet</strong> of clear floor area per bed, plus a mandatory 4-foot clear zone on at least three sides of each bed - a requirement that supersedes the base FGI for all projects permitted under OSHPD jurisdiction. Additionally, <strong>NFPA 101 § 18.2.2</strong> governs the corridor width serving this unit.
+              </div>
+              <div class="citations">
+                <span class="cite-pill">FGI 2022 § 2.2-2.1.1.1 <span class="cite-num">1</span></span>
+                <span class="cite-pill">CBC 2022 § 1276.4 (OSHPD) <span class="cite-num">2</span></span>
+                <span class="cite-pill">NFPA 101 § 18.2.2 <span class="cite-num">3</span></span>
+                <span class="cite-pill">ASHRAE 170 Table 7.1 <span class="cite-num">4</span></span>
+              </div>
+              <div class="code-preview">
+                <div class="cp-preview-inner">
+                  <div class="cp-preview-label">CBC 2022 § 1276.4 &nbsp; OSHPD Amendment - ICU Patient Room Area</div>
+                  <div class="cp-preview-text">Each critical care patient room shall have a minimum clear floor area of 250 square feet with a clear floor space of not less than 4 feet on a minimum of three sides of the patient bed...</div>
+                </div>
+                <div class="cp-preview-icons">
+                  <svg viewBox="0 0 14 14"><path d="M3 3h8v10H3z M5 3V2a1 1 0 012 0v1"/></svg>
+                  <svg viewBox="0 0 14 14"><path d="M11 4l-5 5-3-3"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <div class="chat-input-box">Ask a code question...</div>
+          <div class="chat-send-btn">
+            <svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAPABILITIES ─── -->
+<section class="capabilities">
+  <div class="section-wrap">
+    <div class="capabilities-head">
+      <div class="section-pill">Platform Capabilities</div>
+      <h2>Built for the complexity of healthcare and life science design</h2>
+      <p>Six capabilities ordered by what matters most to a firm working at the intersection of FGI, NFPA, OSHPD, and state-level amendments that don't reference each other.</p>
+    </div>
+    <div class="grid-3x2">
+      <div class="cap-card">
+        <div class="cap-icon">📚</div>
+        <h3>Full Healthcare Code Stack in One Session</h3>
+        <p>Load FGI, IBC, NFPA 101, ASHRAE 170, and state-level OSHPD amendments into a single project. Copilot searches across all of them simultaneously, surfacing conflicts and amendments you'd otherwise find only at permit review.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🎯</div>
+        <h3>Jurisdiction-Specific AI - OSHPD-Aware</h3>
+        <p>Ask a California ICU question and get the OSHPD answer, not the FGI baseline. Copilot knows which state has adopted which FGI edition, which OSHPD amendments are in force, and which CA Title 24 provisions diverge from the federal standard.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🔄</div>
+        <h3>Multi-Code Cross-Referencing</h3>
+        <p>Healthcare design requires coordinating codes that don't reference each other. UpCodes surfaces the NFPA 101 corridor requirement alongside the FGI room area requirement alongside the ASHRAE 170 ventilation requirement - in one research session.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🏢</div>
+        <h3>Firm-Wide Project Collaboration</h3>
+        <p>Healthcare project research is too complex to siloed. UpCodes Projects lets teams share annotated code findings, organize by jurisdiction and facility type, and build from templates that carry senior knowledge into every new project.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">📦</div>
+        <h3>UL Assembly and Product Discovery</h3>
+        <p>When researching a fire-rated floor-ceiling assembly for an I-2 occupancy, find compliant UL assemblies in the same workflow. Over 10,000 assemblies surfaced alongside the NFPA and IBC requirements that govern them.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">⚡</div>
+        <h3>Always-Current - Including FGI Adoption Tracking</h3>
+        <p>7,000+ code section updates per month. UpCodes tracks which states have adopted which FGI edition, integrating OSHPD amendments as they're published. When California updates a health facility standard, it's in the database before it reaches your desk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROOF ─── -->
+<section class="proof-section">
+  <div class="proof-inner">
+    <div>
+      <div class="proof-col-head">
+        <div class="section-pill">Platform Scale</div>
+        <h2>The database behind every Copilot answer</h2>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-block"><span class="s-num">6M+</span><span class="s-lbl">Code sections</span></div>
+        <div class="stat-block"><span class="s-num">1,700+</span><span class="s-lbl">State and city codes</span></div>
+        <div class="stat-block"><span class="s-num">209K+</span><span class="s-lbl">Local amendments</span></div>
+        <div class="stat-block"><span class="s-num">7,000+</span><span class="s-lbl">Updates per month</span></div>
+        <div class="stat-block"><span class="s-num">800K+</span><span class="s-lbl">Monthly active users</span></div>
+        <div class="stat-block"><span class="s-num">94%</span><span class="s-lbl">Top 100 US design firms</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="proof-col-head">
+        <div class="section-pill">Copilot Accuracy</div>
+        <h2>Scored in passing range on the exams your staff trained for</h2>
+      </div>
+      <div class="benchmark">
+        <div class="bench-score">74%</div>
+        <div class="bench-text"><strong>ARE 5.0 text-based code questions</strong> - the Architect Registration Examination every licensed architect in the room studied for.</div>
+      </div>
+      <div class="benchmark">
+        <div class="bench-score">86%</div>
+        <div class="bench-text"><strong>B3 Building Plans Examiner practice exam</strong> - scored in passing range using live jurisdiction-specific data.</div>
+      </div>
+      <div class="benchmark">
+        <div class="bench-score">88%</div>
+        <div class="bench-text"><strong>Overall code question accuracy</strong> on Building Plans Examiner practice assessment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="t-head">
+    <div class="section-pill" style="margin-bottom:14px;">What teams say</div>
+    <h2>Trusted by leading AEC firms nationwide</h2>
+  </div>
+  <div class="t-grid">
+    <div class="t-card">
+      <div class="t-heart">&#10084;</div>
+      <p class="t-quote">"UpCodes saves us a lot of time. And that's not just time upfront, but time saved because we're more accurate throughout the project lifecycle."</p>
+      <div class="t-name">Kevin Edwards</div>
+      <div class="t-role">Senior Project Manager, NK Architects</div>
+    </div>
+    <div class="t-card">
+      <div class="t-heart">&#10084;</div>
+      <p class="t-quote">"UpCodes has improved our efficiency and brought peace of mind in knowing that we are working with up-to-date codes."</p>
+      <div class="t-name">Jenya Zhilina</div>
+      <div class="t-role">Associate, Archivist &amp; Records Manager, Sasaki</div>
+    </div>
+    <div class="t-card">
+      <div class="t-heart">&#10084;</div>
+      <p class="t-quote">"I've been practicing architecture for more than four decades and have never found a more useful and time-saving software."</p>
+      <div class="t-name">Mike Raphael</div>
+      <div class="t-role">Registered Architect</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>See what Copilot returns on a Perkins+Will healthcare project in 30 seconds</h2>
+    <p>We'll walk through a live demo using a real FGI and OSHPD question from a project type Perkins+Will works on. No slides. Copilot surfacing the state amendment that supersedes the guideline your team is referencing.</p>
+    <div class="cta-btns">
+      <button class="btn-white">Book a Demo for Perkins+Will</button>
+      <button class="btn-outline-white">Try for Free</button>
+    </div>
+    <div class="cta-note">Enterprise pricing available. Multi-code project templates and firm-wide licensing included.</div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-top">
+    <a href="index.html" class="logo logo-white">
+      <span class="logo-wordmark">UpCodes</span>
+    </a>
+    <div class="footer-links-row">
+      <a href="#">Pricing</a>
+      <a href="#">Features</a>
+      <a href="#">Contact Sales</a>
+      <a href="#">UpCodes for Manufacturers</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 UpCodes, Inc. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
